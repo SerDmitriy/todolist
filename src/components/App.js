@@ -9,7 +9,7 @@ function App() {
       <div>
         <div>Double-click to edit a todo</div>
         <div>Created by petehunt</div>
-        <div>Created by petehunt</div>
+        <div>Part of TodoMVC</div>
       </div>
     </div>
   );

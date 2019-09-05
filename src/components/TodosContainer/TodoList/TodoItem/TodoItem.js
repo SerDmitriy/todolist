@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-class TodoStatistics extends React.Component {
+class TodoItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,11 +9,13 @@ class TodoStatistics extends React.Component {
     }
   }
   render() {
+    console.log(this.props);
+    console.log(this.state);
     return (
       <React.Fragment>
-        text TodoStatistics
+        text TodoItem
       </React.Fragment>
     )
   }
 }
-export default TodoStatistics;
+export default TodoItem;
