@@ -1,5 +1,7 @@
 import React from 'react';
 import TodoItem from './TodoItem/TodoItem';
+import './TodoList.scss';
+
 
 
 class TodoList extends React.Component {
@@ -8,12 +10,13 @@ class TodoList extends React.Component {
     this.state = {}
   }
   render() {
-    console.log(this.props);
-    console.log(this.state);
     return (
       <React.Fragment>
         <TodoItem />
+        <TodoItem />
+        <TodoItem />
         text TodoList
+        <br></br>
       </React.Fragment>
     )
   }

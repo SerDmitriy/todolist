@@ -1,4 +1,6 @@
 import React from 'react';
+import './TodoItem.scss';
+
 
 
 class TodoItem extends React.Component {
@@ -9,11 +11,12 @@ class TodoItem extends React.Component {
     }
   }
   render() {
-    console.log(this.props);
-    console.log(this.state);
     return (
       <React.Fragment>
-        text TodoItem
+        <input type="radio"></input>
+        <span>text span item</span>
+        <button type='button'>X</button>
+        <br></br>
       </React.Fragment>
     )
   }

@@ -1,5 +1,7 @@
 import React from 'react';
-import TodosContainer from './TodosContainer/TodosContainer'
+import TodosContainer from './TodosContainer/TodosContainer';
+import './App.scss';
+
 
 function App() {
   return (
