@@ -11,12 +11,14 @@ class TodoItem extends React.Component {
     }
   }
   render() {
+    const { id, value, handleDelBtn } = this.props;
+
     return (
       <React.Fragment>
-        <input type="radio"></input>
-        <span>text span item</span>
-        <button type='button'>X</button>
-        <br></br>
+        <input type="radio" id={id}></input>
+        <span>{value}</span>
+        <button type='button' onClick={handleDelBtn}>X</button>
+        <br/>
       </React.Fragment>
     )
   }

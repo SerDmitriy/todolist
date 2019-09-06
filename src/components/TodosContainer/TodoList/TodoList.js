@@ -10,13 +10,11 @@ class TodoList extends React.Component {
     this.state = {}
   }
   render() {
+    const { data, handleDelBtn } = this.props;
     return (
       <React.Fragment>
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
-        text TodoList
-        <br></br>
+        {data.map(item => <TodoItem handleDelBtn={handleDelBtn} key={item.id} {...item} />)}
+        <br />
       </React.Fragment>
     )
   }

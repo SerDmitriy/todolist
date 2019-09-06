@@ -16,14 +16,22 @@ class TodosContainer extends React.Component {
     }
   }
 
-  addItem = value => this.setState(state => ({ data: state.data.concat([{ key: genKey(), value }]) }));
+  addItem = value => this.setState(state => ({ data: state.data.concat([{ id: genKey(), value }]) }));
+  delItem = key => {
+    let newState = 
+    this.setState()
+  }
+
+  handleDelBtn = e => {
+    console.dir(e.target); 
+  }
 
   render() {
-    console.log(this.state);
+    const { data } = this.state;
     return (
       <React.Fragment>
         <AddTodo addItem={this.addItem} />
-        <TodoList />
+        <TodoList handleDelBtn={this.handleDelBtn} data={data} />
         <TodoStatistics />
       </React.Fragment>
     )

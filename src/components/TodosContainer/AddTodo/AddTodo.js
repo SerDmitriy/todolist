@@ -1,14 +1,13 @@
 import React from 'react';
 import './AddTodo.scss';
-
+import { TEXT_ERR_MSG }  from '../../../constants/constants'
 
 class AddTodo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       todoValue: '',
-      errorMsg: false,
-      textErrorMsg: 'This field is required'
+      errorMsg: TEXT_ERR_MSG.textErrReq
     }
   }
 
@@ -19,7 +18,7 @@ class AddTodo extends React.Component {
     if (keyCode === 13) {
       this.validateInput(todoValue)
 
-      if (todoValue && todoValue.length !== 0) {
+      if (todoValue && todoValue.length !== 0 && !this.state.errorMsg) {
         addItem(todoValue)
         this.clearTodoValue(name)
       }
@@ -33,25 +32,19 @@ class AddTodo extends React.Component {
 
   clearTodoValue = name => this.setState({ [name]: '' })
 
-  // validateInput = value => this.setState({ errorMsg: value.length === 0 ? true : false })
-
   validateInput = value => {
-    let newErrorMsg = true;
-    
-    const re = /^[a-zA-Z0-9]{4,25}$/;
-    if (value.length === 0) {newErrorMsg = false}
+    this.setState({ errorMsg: '' });
+    const re = /^[a-zA-Z0-9-=/!/?@]{2,10}$/;
     if (!re.test(String(value))) {
-      console.log(!re.test(String(value).toLowerCase()));
-      this.state.textErrorMsg = 'You need to input only a-z A-Z 0-9 -_ ?!@ "space" => 4-25 symbols';
-      newErrorMsg = false
+      this.setState({ errorMsg: TEXT_ERR_MSG.textErrMain });
     }
-    this.setState({ errorMsg: newErrorMsg})
+    if (value.length === 0) {
+      this.setState({ errorMsg: TEXT_ERR_MSG.textErrZero })
+    }
   }
-
 
   render() {
     const { todoValue, errorMsg } = this.state
-
     return (
       <div>
         <span>></span>
@@ -62,8 +55,9 @@ class AddTodo extends React.Component {
           onKeyUp={this.addTodoValue}
           placeholder="What needs to be done?"
         ></input>
-        {errorMsg ? <span>This {this.state.textErrorMsg}</span> : null}
-        <br></br>
+        <br/>
+        {errorMsg ? <span>{errorMsg}</span> : null}
+        <br/>
       </div>
     )
   }
