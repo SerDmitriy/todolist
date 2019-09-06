@@ -17,7 +17,7 @@ class TodoItem extends React.Component {
       <React.Fragment>
         <input type="radio" id={id}></input>
         <span>{value}</span>
-        <button type='button' onClick={handleDelBtn}>X</button>
+        <button type='button' onClick={() => handleDelBtn(id)}>X</button>
         <br/>
       </React.Fragment>
     )

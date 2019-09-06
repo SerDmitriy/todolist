@@ -22,8 +22,9 @@ class TodosContainer extends React.Component {
     this.setState()
   }
 
-  handleDelBtn = e => {
-    console.dir(e.target); 
+  handleDelBtn = (id) => {
+    console.dir(id); 
+    delItem()
   }
 
   render() {
