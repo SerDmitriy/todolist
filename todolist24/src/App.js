@@ -22,6 +22,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Demo todolist 2024 application</h1>
+        <p>Manual puch to gh-pages branch</p>
         <button onClick={fetchData}>Fetch Data</button>
         {loading ? (
           <p>Loading...</p>
