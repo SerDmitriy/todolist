@@ -1,0 +1,15 @@
+name: "Assign Reviewers to PR"
+
+on:
+  pull_request:
+
+jobs:
+  assign-pr-reviewers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Assign Reviewers to PR"
+        uses: itsOliverBott/assign-pr-reviewers@release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          users: "SerDmitriy, DmitriyDavydovSuki"
+          ignore-drafts: true

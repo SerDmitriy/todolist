@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Demo todolist 2024 application</h1>
-        <p>Check push to master block</p>
+        <p>Deploy branch and review action</p>
         <button onClick={fetchData}>Fetch Data</button>
         {loading ? (
           <p>Loading...</p>
